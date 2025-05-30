@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Edit Data Tari Tradisional</title>
+</head>
+<body>
+    {% if tari %}
+        <h2>EDIT TARI TRADISIONAL</h2>
+        <form action="/update/{{ tari.id }}" method="post">
+            <label>Nama Tarian:</label>
+            <input name="nama" value="{{ tari.nama }}" required type="text" /><br />
+            <label>Asal:</label>
+            <input name="asal" value="{{ tari.asal }}" required type="text" /><br />
+            <button type="submit">Update</button>
+        </form>
+        <br />
+        <a href="/">← Kembali ke Daftar Tari</a>
+    {% else %}
+        <p>Data tidak ditemukan.</p>
+    {% endif %}
+</body>
+</html>
