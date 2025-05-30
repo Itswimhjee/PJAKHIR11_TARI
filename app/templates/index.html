@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tari Tradisional</title>
+</head>
+<body>
+    <h1>INPUT TARI TRADISIONAL</h1>
+    <form action="/" method="post">
+        <label>Nama Tarian:</label>
+        <input name="nama" required type="text" /><br />
+        <label>Asal:</label>
+        <input name="asal" required type="text" /><br />
+        <button type="submit">Simpan</button>
+    </form>
+
+    <h2>DATA TARI TRADISIONAL</h2>
+    <ul>
+        {% for t in tari_list %}
+            <li>
+                {{ t.nama }} - {{ t.asal }}
+                <a href="/hapus/{{ t.id }}" onclick="return confirm('Hapus tari ini?')">Hapus</a> -
+                <a href="/update/{{ t.id }}">Update</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <br/>
+</body>
+</html>
